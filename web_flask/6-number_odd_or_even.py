@@ -39,11 +39,18 @@ def is_a_numbet(n):
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def is_a_numbet_template(n=None):
-    """/number_template/<n>: display a HTML page only if n is integer:
-    H1 tag: “Number: n” inside the tag BODY
-    """
+    """/number_template/<n>: display a HTML page only if n is an integer:
+    H1 tag: “Number: n” inside the tag BODY"""
 
     return render_template('5-number.html', n=n)
+
+
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def odd_or_even_template(n=None):
+    """/number_odd_or_even/<n>: display a HTML page only if n is an integer:
+    H1 tag: “Number: n is even|odd” inside the tag BODY"""
+
+    return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == '__main__':
